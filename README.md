@@ -20,4 +20,31 @@ This project predicts **annual health insurance premiums** based on demographic,
 - **Feature Engineering:**  
   - Calculated **medical risk score** from medical history  
   - Added **genetical risk** feature for young users (age ≤25)  
-- **Multicollinearity check:** Variance Inflation Factor (V
+- **Multicollinearity check:** Variance Inflation Factor (VIF) analysis  
+
+---
+
+## Modeling
+- **Models:** Linear Regression, Ridge Regression, XGBoost  
+- **Model Segmentation:**  
+  - **Age >25:** XGBoost R²≈0.998, extreme errors 0.5%  
+  - **Age ≤25 (with genetical risk):** XGBoost R²≈0.988, extreme errors 2%  
+- **Hyperparameter Tuning:** RandomizedSearchCV for XGBoost  
+- **Error Analysis:** Residuals & percentage difference analysis  
+- **Serialization:** Models and scalers saved using Joblib  
+
+---
+
+## Streamlit App
+- Built an **interactive frontend** using Streamlit  
+- Users can input **age, income, dependants, medical history, genetical risk, and other demographic details**  
+- Provides **real-time premium prediction**  
+- **Live Demo:** [Streamlit Cloud](https://project-ml-premium-prediction.streamlit.app/)  
+
+---
+
+## Installation
+1. Clone the repository:  
+2. pip install -r requirements.txt
+3. streamlit run main.py
+
